@@ -39,7 +39,7 @@
               <div class="card-body">
 
                 <div class="form-group">
-                  <label for="">Name</label>
+                  <label for="">Name take it</label>
                   <input type="text" class="form-control <?php echo (form_error('name')!= ''? 'is-invalid':'') ;?>" name="name" id="name" value="<?php echo set_value('name') ; ?>">
                   <?php echo form_error('name') ;?>
                 </div>
@@ -62,7 +62,7 @@
 
               </div>
               <div class="card-footer">
-                <button class="btn btn-primary" name="submit" type="submit">Submit</button>
+                <button class="btn btn-primary" name="submit" type="submit">  Submit</button>
                 <a href="<?php echo base_url() . 'admin/category/index'; ?>" class="btn btn-secondary">Back</a>
               </div>
             </form>
