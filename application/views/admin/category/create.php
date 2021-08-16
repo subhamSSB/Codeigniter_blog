@@ -39,7 +39,7 @@
               <div class="card-body">
 
                 <div class="form-group">
-                  <label for="">Name take it</label>
+                  <label for="">Name </label>
                   <input type="text" class="form-control <?php echo (form_error('name')!= ''? 'is-invalid':'') ;?>" name="name" id="name" value="<?php echo set_value('name') ; ?>">
                   <?php echo form_error('name') ;?>
                 </div>
