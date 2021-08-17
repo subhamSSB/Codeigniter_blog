@@ -100,7 +100,7 @@ class Category extends CI_Controller
   //This method will shoe edit category page
   public function edit($id)
   {
-    echo $id;
+    // echo $id;
     $res = $this->category_model->editCategory($id);
     if (empty($res)) {
       $this->session->set_flashdata('error', 'Record Not Found');
