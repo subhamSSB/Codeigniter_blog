@@ -35,19 +35,47 @@
               
               </div>
             </div>
-            <form action="" method="POST" name="categoryForm" id="categoryForm" enctype="multipart/form-data">
+            <form action="<?php echo base_url().'admin/article/create'?>" method="POST" name="categoryForm" id="categoryForm" enctype="multipart/form-data">
               <div class="card-body">
 
                 <div class="form-group">
-                  <label for="">Name </label>
-                  <input type="text" class="form-control " name="name" id="name" value="">
-                  
+                  <label for="">Select Category </label>
+                  <select name="selectvalue" id="selectvalue" class="form-control <?php echo (form_error('author')!= ''? 'is-invalid':'') ;?>">
+                    <option value="">Select</option>
+                    <?php 
+                      if(!empty($categories)){
+                        foreach($categories as $category){ 
+                          ?>
+                          <option value="<?php $category['id'] ?>"><?php echo $category['name'] ?></option>
+                          <?php
+                        }
+                        
+                      }
+                      ?>
+                  </select>
+                  <?php echo form_error('category_id'); ?>                
+
+                </div>
+
+                <div class="form-group">
+                  <label for="">Title </label>
+                  <input type="text" class="form-control <?php echo (form_error('title')!= ''? 'is-invalid':'') ;?> " name="title" id="title" value=""> 
+                  <?php echo form_error('title'); ?>                
+                </div>
+                <div class="form-group">
+                  <label for="">Description </label>
+                  <textarea name="description" id="description" cols="20" rows="10" class="textarea"></textarea>
                 </div>
 
                 <div class="form-group">
                   <label for="">Image</label><br>
-                  <input type="file" name="image" id="image" class="">
-               
+                  <input type="file" name="image" id="image" class="">            
+                </div>
+                <div class="form-group">
+                  <label for="">Author</label>
+                  <input type="text" class="form-control <?php echo (form_error('author')!= ''? 'is-invalid':'') ;?>" name="author" id="author" value="">
+                  <?php echo form_error('author'); ?>                
+
                 </div>
 
                 <div class="custom-control custom-radio float-left">
